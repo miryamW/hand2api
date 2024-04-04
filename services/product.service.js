@@ -3,7 +3,6 @@ const { ProductModel } = require('../dataAccess/ProductModel')
 
 const getByCategoryName = async (categoryName) => {
   const category = await ProductModel.findOne({ categoryName }).select({ _id: 0, products: 1 }).exec()
-  console.log(category)
   return category.products.map(p => new Product(p.id, p.name, p.price)).toSorted((p1, p2) => {
     if (p1.name < p2.name) {
       return -1
