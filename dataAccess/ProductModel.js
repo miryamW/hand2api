@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const categorySchema = new Schema({
-  category_id: Number,
-  category_name: String,
+  categoryId: Number,
+  categoryName: String,
   products: [{
     id: Number,
     name: String,
@@ -13,4 +13,4 @@ const categorySchema = new Schema({
 })
 
 const ProductModel = mongoose.model('products', categorySchema)
-module.exports = ProductModel
+module.exports = { ProductModel }

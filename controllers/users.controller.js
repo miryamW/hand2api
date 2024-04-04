@@ -3,7 +3,7 @@ const router = express.Router()
 const { User } = require('../models/User')
 const userService = require('../services/users.service')
 
-router.post('/login', async (req, res) => {
+router.post('/signin', async (req, res) => {
   const { name, password } = req.body
   console.log(password)
   const token = await userService.login(name, password)
