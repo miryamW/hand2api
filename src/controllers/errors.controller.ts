@@ -1,10 +1,11 @@
+
 const express = require('express')
 
 const router = express.Router()
 
 router.get('*', (req, res, next) => {
   const err = new Error('You have a mistake at the url')
-  err.statusCode = 404
+  res.statusCode = 404
   next(err)
 })
 
@@ -17,5 +18,6 @@ router.use((err, req, res, next) => {
   const message = err.message || 'there is now error in the server. try again later'
   res.status(status).send(message)
 })
+export {};
 
 module.exports = router

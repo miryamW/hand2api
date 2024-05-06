@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const userService = require('../services/users.service')
 
-const auth = (req, res, next) => {
+const auth = (req: { header: (arg0: string) => any }, res: { status: (arg0: number) => { (): any; new(): any; send: { (arg0: string): any; new(): any } }; sendStatus: (arg0: number) => void }, next: () => void) => {
   let token = req.header('Authorization')
   if (!token) return res.status(401).send('Access Denied')
   try {

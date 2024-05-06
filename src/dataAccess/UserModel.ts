@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
+const mongoose:any = require('mongoose')
 
-const Schema = mongoose.Schema
+const Schma:any = mongoose.Schema
 
-const userSchema = new Schema({
+const userSchema = new Schma({
   id: Number,
   name: String,
   password: String,
@@ -11,4 +11,6 @@ const userSchema = new Schema({
 })
 
 const UserModel = mongoose.model('users', userSchema)
+export {};
+
 module.exports = { UserModel }

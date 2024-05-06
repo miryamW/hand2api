@@ -37,5 +37,6 @@ router.delete('/:categoryName/:productId', (req, res) => {
   productsService.deleteProduct(categoryName, productId)
   res.send('the product was deleted successfully')
 })
+export {};
 
 module.exports = router
